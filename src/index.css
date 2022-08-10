@@ -6,6 +6,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .intro::after {
   content: '';
   width: 100%;
@@ -18,5 +22,55 @@ html {
 }
 
 a:hover {
- text-decoration: underline; 
+  text-decoration: underline;
+}
+
+.animTop {
+  opacity: 0;
+  transform: translateY(100%);
+  animation: animTop 1s ease forwards;
+}
+
+.animRight {
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: animRight 1s ease forwards;
+  transition: 1s;
+}
+
+.animate, .animate div {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: 1s;
+}
+
+.animate div:nth-of-type(even) {
+  transform: translateX(100%);
+}
+
+.animate.animRight, .animate div.animRight {
+  animation: none;
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+
+@keyframes animTop {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes animRight {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
 }
