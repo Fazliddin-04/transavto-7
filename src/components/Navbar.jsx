@@ -20,9 +20,9 @@ function Navbar() {
 
   return (
     <nav className="p-4">
-      <div className="md:container md:px-4 mx-auto flex items-center justify-between mb-4">
+      <div className="animateNav md:container md:px-4 mx-auto flex items-center justify-between pb-4 border-b-4">
         <div
-          className="border-2 p-2 mr-2 2xl:hidden"
+          className=" border-2 p-2 mr-2 2xl:hidden "
           onClick={() => setDrawer(true)}
         >
           <FaBars />
@@ -35,15 +35,18 @@ function Navbar() {
           <a href="tel:+89787775555">8 (800) 550-70-55</a>
         </div>
       </div>
-      <div className="border-y-4 hidden 2xl:block">
+      <div className="border-b-4 hidden 2xl:block">
         <ul className="flex items-center justify-between px-4 text-lg">
-          <li className="my-3">
+          <li style={{ animationDelay: '100ms' }} className="my-3">
             <a href="#about">О нас</a>
           </li>
-          <li className="my-3">
+          <li style={{ animationDelay: '200ms' }} className="my-3">
             <a href="#services">Все Услуги</a>
           </li>
-          <li className="my-3 relative z-10">
+          <li
+            style={{ animationDelay: '300ms' }}
+            className="my-3 relative z-10"
+          >
             <div
               className="flex items-center gap-1 cursor-pointer"
               onClick={() => {
@@ -68,7 +71,10 @@ function Navbar() {
               <a href="#!">Lorem ipsum</a>
             </div>
           </li>
-          <li className="my-3 relative z-10">
+          <li
+            style={{ animationDelay: '400ms' }}
+            className="my-3 relative z-10"
+          >
             <div
               className="flex items-center gap-1 cursor-pointer"
               onClick={() => {
@@ -93,7 +99,10 @@ function Navbar() {
               <a href="#!">Lorem ipsum</a>
             </div>
           </li>
-          <li className="my-3 relative z-10">
+          <li
+            style={{ animationDelay: '500ms' }}
+            className="my-3 relative z-10"
+          >
             <div
               className="flex items-center gap-1 cursor-pointer"
               onClick={() => {
@@ -118,7 +127,10 @@ function Navbar() {
               <a href="#!">Lorem ipsum</a>
             </div>
           </li>
-          <li className="my-3 relative z-10">
+          <li
+            style={{ animationDelay: '600ms' }}
+            className="my-3 relative z-10"
+          >
             <div
               className="flex items-center gap-1 cursor-pointer"
               onClick={() => {
@@ -143,10 +155,13 @@ function Navbar() {
               <a href="#!">Lorem ipsum</a>
             </div>
           </li>
-          <li className="my-3">
+          <li style={{ animationDelay: '700ms' }} className="my-3">
             <a href="#competitors">Конкурентам</a>
           </li>
-          <li className="my-3 relative z-10">
+          <li
+            style={{ animationDelay: '800ms' }}
+            className="my-3 relative z-10"
+          >
             <div
               className="flex items-center gap-1 cursor-pointer"
               onClick={() => {
@@ -171,16 +186,18 @@ function Navbar() {
               <a href="#!">Lorem ipsum</a>
             </div>
           </li>
-          <li className="my-3">
+          <li style={{ animationDelay: '900ms' }} className="my-3">
             <a href="#vacancy">Вакансии</a>
           </li>
-          <li className="my-3">
+          <li style={{ animationDelay: '1000ms' }} className="my-3">
             <a href="#contacts">Контакты</a>
           </li>
         </ul>
       </div>
       <div
-        className="fixed top-0 left-0 w-50 h-screen bg-white border px-4 py-5 transition ease-out z-40 2xl:hidden"
+        className={`${
+          drawer ? 'animDrawer' : ''
+        } fixed top-0 left-0 w-50 h-screen bg-white border px-4 py-5 transition duration-500 z-40 2xl:hidden`}
         style={{ transform: drawer ? 'translateX(0%)' : 'translateX(-100%)' }}
       >
         <div className="flex items-center justify-between pb-4">
@@ -193,13 +210,16 @@ function Navbar() {
         </div>
         <hr />
         <ul className="h-full overflow-y-auto px-2 py-4 text-xl">
-          <li className="my-3">
+          <li style={{ animationDelay: '100ms' }} className="my-3">
             <a href="#about">О нас</a>
           </li>
-          <li className="my-3">
+          <li style={{ animationDelay: '200ms' }} className="my-3">
             <a href="#services">Все Услуги</a>
           </li>
-          <li className="my-3">
+          <li
+            style={{ animationDelay: '300ms' }}
+            className={`py-1 my-2 ${menu1 && 'bg-[#EFF2F8] px-2'}`}
+          >
             <div
               className="flex items-center gap-1 cursor-pointer"
               onClick={() => setMenu1(!menu1)}
@@ -210,7 +230,7 @@ function Navbar() {
               />
             </div>
             <div
-              className={`flex flex-col pl-4 overflow-hidden ${
+              className={`flex flex-col pl-4 overflow-hidden transition ${
                 menu1 ? 'h-fit' : 'h-0'
               }`}
             >
@@ -219,7 +239,10 @@ function Navbar() {
               <a href="#!">Lorem ipsum</a>
             </div>
           </li>
-          <li className="my-3">
+          <li
+            style={{ animationDelay: '400ms' }}
+            className={`py-1 my-2 ${menu2 && 'bg-[#EFF2F8] px-2'}`}
+          >
             <div
               className="flex items-center gap-1 cursor-pointer"
               onClick={() => setMenu2(!menu2)}
@@ -230,7 +253,7 @@ function Navbar() {
               />
             </div>
             <div
-              className={`flex flex-col pl-4 overflow-hidden ${
+              className={`flex flex-col pl-4 overflow-hidden transition ${
                 menu2 ? 'h-fit' : 'h-0'
               }`}
             >
@@ -239,7 +262,10 @@ function Navbar() {
               <a href="#!">Lorem ipsum</a>
             </div>
           </li>
-          <li className="my-3">
+          <li
+            style={{ animationDelay: '500ms' }}
+            className={`py-1 my-2 ${menu3 && 'bg-[#EFF2F8] px-2'}`}
+          >
             <div
               className="flex items-center gap-1 cursor-pointer"
               onClick={() => setMenu3(!menu3)}
@@ -250,7 +276,7 @@ function Navbar() {
               />
             </div>
             <div
-              className={`flex flex-col pl-4 overflow-hidden ${
+              className={`flex flex-col pl-4 overflow-hidden transition ${
                 menu3 ? 'h-fit' : 'h-0'
               }`}
             >
@@ -259,7 +285,10 @@ function Navbar() {
               <a href="#!">Lorem ipsum</a>
             </div>
           </li>
-          <li className="my-3">
+          <li
+            style={{ animationDelay: '600ms' }}
+            className={`py-1 my-2 ${menu4 && 'bg-[#EFF2F8] px-2'}`}
+          >
             <div
               className="flex items-center gap-1 cursor-pointer"
               onClick={() => setMenu4(!menu4)}
@@ -270,7 +299,7 @@ function Navbar() {
               />
             </div>
             <div
-              className={`flex flex-col pl-4 overflow-hidden ${
+              className={`flex flex-col pl-4 overflow-hidden transition ${
                 menu4 ? 'h-fit' : 'h-0'
               }`}
             >
@@ -279,10 +308,13 @@ function Navbar() {
               <a href="#!">Lorem ipsum</a>
             </div>
           </li>
-          <li className="my-3">
+          <li style={{ animationDelay: '700ms' }} className="my-3">
             <a href="#competitors">Конкурентам</a>
           </li>
-          <li className="my-3">
+          <li
+            style={{ animationDelay: '800ms' }}
+            className={`py-1 my-2 ${menu5 && 'bg-[#EFF2F8] px-2'}`}
+          >
             <div
               className="flex items-center gap-1 cursor-pointer"
               onClick={() => setMenu5(!menu5)}
@@ -293,7 +325,7 @@ function Navbar() {
               />
             </div>
             <div
-              className={`flex flex-col pl-4 overflow-hidden ${
+              className={`flex flex-col pl-4 overflow-hidden transition ${
                 menu5 ? 'h-fit' : 'h-0'
               }`}
             >
@@ -302,16 +334,16 @@ function Navbar() {
               <a href="#!">Lorem ipsum</a>
             </div>
           </li>
-          <li className="my-3">
+          <li style={{ animationDelay: '900ms' }} className="my-3">
             <a href="#vacancy">Вакансии</a>
           </li>
-          <li className="my-3">
+          <li style={{ animationDelay: '1000ms' }} className="my-3">
             <a href="#contacts">Контакты</a>
           </li>
         </ul>
       </div>
       <div
-        className="fixed top-0 right-0 w-full h-full bg-black/70 transition 2xl:hidden z-30"
+        className="fixed top-0 right-0 w-full h-full bg-black/70 transition duration-500 2xl:hidden z-30"
         style={{
           opacity: drawer ? '1' : '0',
           transform: drawer ? 'translateX(0%)' : 'translateX(100%)',

@@ -38,7 +38,8 @@ a:hover {
   transition: 1s;
 }
 
-.animate, .animate div {
+.animate,
+.animate div {
   opacity: 0;
   transform: translateX(-100%);
   transition: 1s;
@@ -48,12 +49,38 @@ a:hover {
   transform: translateX(100%);
 }
 
-.animate.animRight, .animate div.animRight {
+.animate.animRight,
+.animate div.animRight {
   animation: none;
   opacity: 1;
   transform: translateX(0%);
 }
 
+nav .animateNav {
+  opacity: 0;
+  transform: translateY(-100%);
+  animation: animDown 2s ease forwards;
+}
+
+nav .border-y-4 ul li,
+nav .animDrawer ul li {
+  opacity: 0;
+  transform: translateY(100%);
+  animation: animTop 500ms ease forwards;
+}
+
+#home {
+  animation: animBg 2s ease forwards;
+}
+
+@keyframes animBg {
+  0% {
+    background-size: 100% 100%;
+  }
+  100% {
+    background-size: 120% 120%;
+  }
+}
 
 @keyframes animTop {
   0% {
@@ -71,6 +98,17 @@ a:hover {
   }
   100% {
     opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes animDown {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
     transform: translateX(0%);
   }
 }

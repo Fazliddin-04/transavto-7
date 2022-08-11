@@ -75,7 +75,7 @@ function App() {
     <div onScroll={checkBoxes} ref={boxes}>
       <Suspense fallback={<p>Loading...</p>} >
         <Navbar />
-        <section id="home" className="my-10 intro container px-4 mx-auto relative z-[1] h-[70vh] flex flex-col justify-center text-white" style={{ background: `center / cover no-repeat url(${bgIntro})` }}>
+        <section id="home" className="overflow-hidden my-10 intro container px-4 mx-auto relative z-[1] h-[70vh] flex flex-col justify-center text-white" style={{ background: `center / cover no-repeat url(${bgIntro})` }}>
           <div className="ml-[2vw] md:ml-[7vw] lg:ml-[10vw]">
             <h1 className="text-3xl lg:text-5xl font-bold animRight" style={{ animationDelay: '100ms', maxWidth: '800px', width: '100%' }}>
               Купить пакет документов
@@ -89,25 +89,32 @@ function App() {
           </div>
 
         </section>
-        <section id="about" className="bg-[#EFF2F8] py-10">
+        <section id="about" className="overflow-hidden  bg-[#EFF2F8] py-10">
           <h2 className="text-3xl text-center font-bold mb-10">Что это?</h2>
           <div className="flex items-center justify-center flex-wrap lg:flex-nowrap gap-10 px-4">
-            <p className="animate max-w-[660px]">
-              Пакет документов по безопасности дорожного движения -
-              это самый объемный перечень нормативных документов
-              и проводимых мер, необходимых для обеспечения безопасной работы с транспортными средствами.
+            <div>
+              <p className="animate max-w-[660px]">
+                Пакет документов по безопасности дорожного движения -
+                это самый объемный перечень нормативных документов
+                и проводимых мер, необходимых для обеспечения безопасной работы с транспортными средствами.
+              </p>
               <br />
               <br />
-              Сегодня почти каждое предприятие имеет на балансе свой транспорт. По этой причине действующее законодательство предусматривает ряд правил и мер, соблюдение которых необходимо для обеспечения безопасности дорожного движения.
+              <p className="animate max-w-[660px]" style={{transitionDelay: '100ms'}}>
+                Сегодня почти каждое предприятие имеет на балансе свой транспорт. По этой причине действующее законодательство предусматривает ряд правил и мер, соблюдение которых необходимо для обеспечения безопасности дорожного движения.
+              </p>
               <br />
               <br />
-              При этом нормативно-правовая база в сфере БДД претерпевает регулярные обновления. Мы всегда следим за изменениями
-              и предоставляем своим клиентам самую актуальную информацию на текущий период времени.
-            </p>
+              <p className="animate max-w-[660px]" style={{ transitionDelay: '200ms' }}>
+                При этом нормативно-правовая база в сфере БДД претерпевает регулярные обновления. Мы всегда следим за изменениями
+                и предоставляем своим клиентам самую актуальную информацию на текущий период времени.
+              </p>
+            </div>
+
             <img src={docs} alt="docs" className="block object-cover animate" width={292} />
           </div>
         </section>
-        <section className="animate py-10">
+        <section className="animate py-10 overflow-hidden ">
           <h2 className="text-3xl text-center font-bold mb-10">Кому нужно?</h2>
           <div className="flex items-center flex-col justify-center flex-wrap lg:flex-nowrap gap-5 px-4 max-w-[1047px] w-full mx-auto">
             <p>
@@ -147,7 +154,7 @@ function App() {
             </div>
           </div>
         </section>
-        <section className="animate py-10">
+        <section className="animate py-10 overflow-hidden ">
           <h2 className="text-3xl text-center font-bold mb-10">Зачем?</h2>
           <div className="flex items-center flex-col justify-center flex-wrap lg:flex-nowrap gap-5 px-4 max-w-[1047px] w-full mx-auto">
             <p>
@@ -182,14 +189,14 @@ function App() {
             </div>
           </div>
         </section>
-        <section className="animate py-10 flex items-center justify-center">
+        <section className="animate py-10 flex items-center justify-center overflow-hidden ">
           <div className="bg-white shadow-xl border rounded-2xl text-center py-10 px-14">
             <h3 className="text-xl font-bold text-[#5374CA]">Купить пакет документов</h3>
             <small>Оплатите документы</small>
             <a href="#!" className="mt-5 block bg-[#5374CA] rounded-2xl text-white p-1">Скачать</a>
           </div>
         </section>
-        <section className="animate py-10">
+        <section className="animate py-10 overflow-hidden ">
           <h2 className="text-3xl text-center font-bold mb-10">В пакет входит:</h2>
           <div className="flex items-center flex-col justify-center flex-wrap lg:flex-nowrap gap-5 px-4 max-w-[1047px] w-full mx-auto">
             <Faq que={'Должностные инструкции'} ans={`
@@ -213,7 +220,7 @@ function App() {
             <Faq que={'ДТП'} ans={`<a href="#!">Должностная инструкция ответственного за БДД;</a>`} />
           </div>
         </section>
-        <section className="animate py-10">
+        <section className="animate py-10 overflow-hidden ">
           <h2 className="text-3xl text-center font-bold mb-10">Преимущества</h2>
           <div className="flex items-center flex-col justify-center flex-wrap lg:flex-nowrap gap-5 px-4 max-w-[1047px] w-full mx-auto text-sm sm:text-lg">
             <div className="flex items-center gap-10 border-2 w-full p-4 rounded-2xl shadow-xl">
@@ -259,7 +266,7 @@ function App() {
             </div>
           </div>
         </section>
-        <section className="animate py-10 flex items-center justify-center">
+        <section className="animate py-10 flex items-center justify-center overflow-hidden ">
           <div className="bg-white shadow-xl border rounded-2xl text-center py-10 px-14">
             <h3 className="text-xl font-bold text-[#5374CA]">Купить пакет документов</h3>
             <small>Оплатите документы</small>
@@ -268,7 +275,7 @@ function App() {
         </section>
         <Footer />
       </Suspense>
-    </div>
+    </div >
 
   );
 }
